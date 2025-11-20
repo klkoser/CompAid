@@ -1,2 +1,17 @@
+# Test data directories
 data
+
+# Python
+*.pyc
+__pycache__/
+venv/
+env/
+
+# Environment files
+*.env
+
+# IDE files
+.vscode/
+
+# OS files
 .DS_Store
