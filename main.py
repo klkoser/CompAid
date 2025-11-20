@@ -10,7 +10,7 @@ import matplotlib
 import seaborn
 import fcsparser
 import FlowCal
-
+import torchvision
 
 # Check versions
 print(f"Torch version {torch.__version__}")
@@ -20,6 +20,7 @@ print(f"Matplotlib version {matplotlib.__version__}")
 print(f"Seaborn version {seaborn.__version__}")
 print(f"fcsparser version {fcsparser.__version__}")
 print(f"FlowCal version {FlowCal.__version__}")
+print(f"torchvision version {torchvision.__version__}")
 
 def main():
     print("start of processing")
