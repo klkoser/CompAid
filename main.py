@@ -3,6 +3,23 @@
 import sys
 import shutil
 import os
+import pandas
+import numpy
+import torch
+import matplotlib
+import seaborn
+import fcsparser
+import FlowCal
+
+
+# Check versions
+print(f"Torch version {torch.__version__}")
+print(f"Pandas version {pandas.__version__}")
+print(f"Numpy version {numpy.__version__}")
+print(f"Matplotlib version {matplotlib.__version__}")
+print(f"Seaborn version {seaborn.__version__}")
+print(f"fcsparser version {fcsparser.__version__}")
+print(f"FlowCal version {FlowCal.__version__}")
 
 def main():
     print("start of processing")
