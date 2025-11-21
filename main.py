@@ -17,8 +17,9 @@ target_markers = ['CD45RA', 'CD8', 'CD38', 'CCR7', 'CD20']
 
 # Pull base directory from dev.env
 base_dir = '/service'
+input_dir = os.environ['INPUT_DIR']
 pdf_path = f'{base_dir}/outputs/marker_pairplots_by_subject_with_labels.pdf'
-model_path = f'{base_dir}/model/model.pth'
+model_path = f'{input_dir}/model.pth'
 max_subjects = 3  # Only process first 3 subjects
 
 # -----------------------------
@@ -129,7 +130,7 @@ print("Using markers:", markers)
 # -----------------------------
 # Load your data_df and build subject list
 # -----------------------------
-data_df = pd.read_csv(f'{base_dir}/Data/subset_dataset_labels.csv')
+data_df = pd.read_csv(f'{input_dir}/subset_dataset_labels.csv')
 
 # Extract unique subjects: remove marker pairs and get base subject identifier
 def extract_subject(filename):
@@ -165,7 +166,7 @@ for idx, row in data_df.iterrows():
     subject_with_status = '_'.join(parts[:-2])
     
     # Find the actual CSV file
-    csv_path = f'{base_dir}/Data/Raw_Data/{subject_with_status}.csv'
+    csv_path = f'{input_dir}/{subject_with_status}.csv'
     
     if not os.path.exists(csv_path):
         print(f"  WARNING: File not found: {csv_path}, skipping...")
@@ -213,7 +214,7 @@ def plot_subject_pairgrid(sub_df, subject_with_status, markers):
     fig.suptitle(title, fontsize=14)
 
     # Load raw per-subject data
-    csv_path = f'{base_dir}/Data/Raw_Data/{subject_with_status}.csv'
+    csv_path = f'{input_dir}/{subject_with_status}.csv'
     if not os.path.exists(csv_path):
         print(f"  WARNING: File not found: {csv_path}")
         return None
