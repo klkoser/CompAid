@@ -7,7 +7,8 @@ services:
       - dev.env
     image: hackathon/python
     volumes:
-      - ./data:/service/data
+      - ./data:/service/Data
+      - ./outputs:/service/outputs
     container_name: hackathon-python
     build:
       context: .
