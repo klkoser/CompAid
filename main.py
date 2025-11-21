@@ -19,6 +19,8 @@ target_markers = ['CD45RA', 'CD8', 'CD38', 'CCR7', 'CD20']
 base_dir = '/service'
 input_dir = os.environ['INPUT_DIR']
 output_dir = os.environ['OUTPUT_DIR']
+os.mkdir(output_dir)
+
 pdf_path = f'{output_dir}/marker_pairplots_by_subject_with_labels.pdf'
 model_path = f'{input_dir}/model.pth'
 max_subjects = 3  # Only process first 3 subjects
