@@ -6,6 +6,7 @@ data
 __pycache__/
 venv/
 env/
+outputs/
 
 # Environment files
 *.env
